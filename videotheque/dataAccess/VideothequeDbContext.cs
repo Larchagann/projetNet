@@ -9,22 +9,22 @@ using videotheque.bean;
 
 namespace videotheque.dataAccess
 {
-    public class GenreDbContext : DbContext
+    public class VideothequeDbContext : DbContext
     {
-        private static GenreDbContext _context = null;
-        public async static Task<GenreDbContext> GetCurrent()
+        private static VideothequeDbContext _context = null;
+        public async static Task<VideothequeDbContext> GetCurrent()
         {
             if (_context == null)
             {
-                _context = new GenreDbContext(
+                _context = new VideothequeDbContext(
                     Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "database.db"));
                 await _context.Database.MigrateAsync();
             }
             return _context;
         }
 
-        internal GenreDbContext(DbContextOptions options) : base(options) { }
-        private GenreDbContext(string databasePath) : base()
+        internal VideothequeDbContext(DbContextOptions options) : base(options) { }
+        private VideothequeDbContext(string databasePath) : base()
         {
             DatabasePath = databasePath;
         }
@@ -43,6 +43,8 @@ namespace videotheque.dataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<bean.MediaGenre>().HasKey(ab => new { ab.IdGenre, ab.IdMedia });
         }
     }
 }

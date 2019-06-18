@@ -41,5 +41,8 @@ namespace videotheque.bean
         public string Photo { get => photo; set => photo = value; }
 
         public DateTime DateNaissance { get => dateNaissance; set => dateNaissance = value; }
+
+        [InverseProperty(nameof(MediaPersonne.Personne))]
+        public List<MediaPersonne> ListMediaPersonne { get; set; }
     }
 }

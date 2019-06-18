@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace videotheque.bean
 {
-    public class mediaPersonne
+    public class MediaPersonne
     {
         private int id;
         private int idPersonne;
@@ -16,7 +17,7 @@ namespace videotheque.bean
         private string photo;
 
 
-        public mediaPersonne(int id, int idPersonne, int idMedia, string role, string photo)
+        public MediaPersonne(int id, int idPersonne, int idMedia, string role, string photo)
         {
             this.id = id;
             this.idPersonne = idPersonne;
@@ -31,5 +32,9 @@ namespace videotheque.bean
         public string Role { get => role; set => role = value; }
         public string Photo { get => photo; set => photo = value; }
 
+        [ForeignKey(nameof(IdMedia))]
+        public Media Media { get; set; }
+        [ForeignKey(nameof(IdPersonne))]
+        public Personne Personne { get; set; }
     }
 }

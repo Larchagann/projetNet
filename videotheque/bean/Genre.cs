@@ -23,5 +23,8 @@ namespace videotheque.bean
         public int Id { get => id; set => id = value; }
 
         public string Libelle { get => libelle; set => libelle = value; }
+
+        [InverseProperty(nameof(MediaGenre.Genre))]
+        public List<MediaGenre> ListMediaGenre { get; set; }
     }
 }

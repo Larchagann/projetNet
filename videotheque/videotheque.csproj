@@ -174,11 +174,11 @@
     <Compile Include="bean\Episode.cs" />
     <Compile Include="bean\Genre.cs" />
     <Compile Include="bean\Media.cs" />
-    <Compile Include="bean\mediaGenre.cs" />
-    <Compile Include="bean\mediaPersonne.cs" />
+    <Compile Include="bean\MediaGenre.cs" />
+    <Compile Include="bean\MediaPersonne.cs" />
     <Compile Include="bean\Personne.cs" />
-    <Compile Include="dataAccess\GenreDbContext.cs" />
-    <Compile Include="dataAccess\GenreDbContextFactory.cs" />
+    <Compile Include="dataAccess\VideothequeDbContext.cs" />
+    <Compile Include="dataAccess\VideothequeDbContextFactory.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

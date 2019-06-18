@@ -71,5 +71,10 @@ namespace videotheque.bean
 
         public DateTime DateSortie { get => dateSortie; set => dateSortie = value; }
 
+
+        [InverseProperty(nameof(MediaGenre.Media))]
+        public List<MediaGenre> ListMediaGenre { get; set; }
+        [InverseProperty(nameof(MediaPersonne.Media))]
+        public List<MediaPersonne> ListMediaPersonne { get; set; }
     }
 }
