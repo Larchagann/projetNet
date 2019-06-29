@@ -4,6 +4,27 @@
              xmlns:local="clr-namespace:videotheque"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Label" x:Key="titrePage">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Foreground" Value="#3d3d3d"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10, 10, 10, 10"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="sousTitrePage">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="#3d3d3d"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10, 10, 10, 10"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="liste">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#3d3d3d"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="50, 5, 5, 5"/>
+        </Style>
     </Application.Resources>
 </Application>

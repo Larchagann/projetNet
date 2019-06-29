@@ -7,6 +7,37 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource titrePage}">Vidéothèque</Label>
+
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource sousTitrePage}">Les films</Label>
+        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource sousTitrePage}">Les séries</Label>
+
+        <Label Grid.Row="2"  Grid.Column="0" Style="{StaticResource liste}">nombre de films : </Label>
+        <ComboBox Grid.Row="2" Grid.Column="1"
+            ItemsSource="{Binding x}" DisplayMemberPath="Libelle"
+            SelectedItem="{Binding x}" />
         
+        
+        <Label Grid.Row="2"  Grid.Column="2" Style="{StaticResource liste}">nombre de séries : </Label>
+        <ComboBox Grid.Row="2" Grid.Column="3"
+            ItemsSource="{Binding x}" DisplayMemberPath="Libelle"
+            SelectedItem="{Binding x}" />
+
+        <Frame Content="{Binding x}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></Frame>
+        <Frame Content="{Binding x}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></Frame>
     </Grid>
 </Window>
