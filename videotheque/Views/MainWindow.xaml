@@ -27,17 +27,21 @@
         <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource sousTitrePage}">Les séries</Label>
 
         <Label Grid.Row="2"  Grid.Column="0" Style="{StaticResource liste}">nombre de films : </Label>
-        <ComboBox Grid.Row="2" Grid.Column="1"
-            ItemsSource="{Binding x}" DisplayMemberPath="Libelle"
-            SelectedItem="{Binding x}" />
-        
-        
-        <Label Grid.Row="2"  Grid.Column="2" Style="{StaticResource liste}">nombre de séries : </Label>
-        <ComboBox Grid.Row="2" Grid.Column="3"
-            ItemsSource="{Binding x}" DisplayMemberPath="Libelle"
-            SelectedItem="{Binding x}" />
+        <ComboBox Name="cmbSelectFiltreFilm" SelectionChanged="CmbSelectFiltreFilm_SelectionChanged" Grid.Row="2" Grid.Column="1">
+            <ComboBoxItem Content = "Genres" />
+            <ComboBoxItem Content = "Personnes" />
+            <ComboBoxItem Content = "Durées" />
+        </ComboBox>
 
-        <Frame Content="{Binding x}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></Frame>
-        <Frame Content="{Binding x}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></Frame>
+
+        <Label Grid.Row="2"  Grid.Column="2" Style="{StaticResource liste}">nombre de séries : </Label>
+        <ComboBox Name="cmbSelectFiltreSerie" SelectionChanged="CmbSelectFiltreSerie_SelectionChanged"  Grid.Row="2" Grid.Column="3">
+            <ComboBoxItem Content = "Genres" />
+            <ComboBoxItem Content = "Personnes" />
+            <ComboBoxItem Content = "Durées" />
+        </ComboBox>
+
+        <Frame Content="{Binding Path=PageStatFilmEnCours, Mode=TwoWay}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></Frame>
+        <Frame Content="{Binding Path=PageStatSerieEnCours, Mode=TwoWay}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></Frame>
     </Grid>
 </Window>
