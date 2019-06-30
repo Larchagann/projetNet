@@ -1,0 +1,47 @@
+﻿<Page x:Class="videotheque.Views.Accueil"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:videotheque.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Accueil">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource titrePage}">Vidéothèque</Label>
+
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource sousTitrePage}">Les films</Label>
+        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource sousTitrePage}">Les séries</Label>
+
+        <Label Grid.Row="2"  Grid.Column="0" Style="{StaticResource liste}">nombre de films :</Label>
+        <ComboBox Name="cmbSelectFiltreFilm" SelectionChanged="CmbSelectFiltreFilm_SelectionChanged" Grid.Row="2" Grid.Column="1" Style="{StaticResource comboBox}">
+            <ComboBoxItem Content = "Genres" />
+            <ComboBoxItem Content = "Personnes" />
+            <ComboBoxItem Content = "Durées" />
+        </ComboBox>
+
+        <Label Grid.Row="2"  Grid.Column="2" Style="{StaticResource liste}">nombre de séries :</Label>
+        <ComboBox Name="cmbSelectFiltreSerie" SelectionChanged="CmbSelectFiltreSerie_SelectionChanged"  Grid.Row="2" Grid.Column="3" Style="{StaticResource comboBox}">
+            <ComboBoxItem Content = "Genres" />
+            <ComboBoxItem Content = "Personnes" />
+            <ComboBoxItem Content = "Durées" />
+        </ComboBox>
+
+        <Frame Content="{Binding Path=PageStatFilmEnCours, Mode=TwoWay}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></Frame>
+        <Frame Content="{Binding Path=PageStatSerieEnCours, Mode=TwoWay}" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2"></Frame>
+    </Grid>
+</Page>

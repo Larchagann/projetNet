@@ -9,39 +9,16 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource titrePage}">Vidéothèque</Label>
+        <Frame Grid.Row="0" Grid.Column="0" Content="{Binding Path=PageEnCours, Mode=TwoWay}"></Frame>
 
-        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource sousTitrePage}">Les films</Label>
-        <Label Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource sousTitrePage}">Les séries</Label>
+        <Button Name="boutonVoirFilmSerie"  Grid.Row="1" Grid.Column="0" Click="BoutonVoirFilmSerie_Click" Style="{StaticResource bouton}">Voir les films et séries</Button>
 
-        <Label Grid.Row="2"  Grid.Column="0" Style="{StaticResource liste}">nombre de films : </Label>
-        <ComboBox Name="cmbSelectFiltreFilm" SelectionChanged="CmbSelectFiltreFilm_SelectionChanged" Grid.Row="2" Grid.Column="1">
-            <ComboBoxItem Content = "Genres" />
-            <ComboBoxItem Content = "Personnes" />
-            <ComboBoxItem Content = "Durées" />
-        </ComboBox>
-
-
-        <Label Grid.Row="2"  Grid.Column="2" Style="{StaticResource liste}">nombre de séries : </Label>
-        <ComboBox Name="cmbSelectFiltreSerie" SelectionChanged="CmbSelectFiltreSerie_SelectionChanged"  Grid.Row="2" Grid.Column="3">
-            <ComboBoxItem Content = "Genres" />
-            <ComboBoxItem Content = "Personnes" />
-            <ComboBoxItem Content = "Durées" />
-        </ComboBox>
-
-        <Frame Content="{Binding Path=PageStatFilmEnCours, Mode=TwoWay}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></Frame>
-        <Frame Content="{Binding Path=PageStatSerieEnCours, Mode=TwoWay}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"></Frame>
     </Grid>
 </Window>

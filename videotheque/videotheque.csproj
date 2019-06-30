@@ -165,12 +165,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\Accueil.xaml.cs">
+      <DependentUpon>Accueil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FilmsEtSeries.xaml.cs">
+      <DependentUpon>FilmsEtSeries.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\statsFilmParGenre.xaml.cs">
       <DependentUpon>statsFilmParGenre.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\statsSerieParGenre.xaml.cs">
       <DependentUpon>statsSerieParGenre.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\Accueil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FilmsEtSeries.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

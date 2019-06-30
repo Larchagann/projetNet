@@ -27,32 +27,19 @@ namespace videotheque
         {
             DataContext = this;
             InitializeComponent();
-        }
-
-        //Pour page des stats en cours des films
-        private Page _pageStatFilmEnCours;
-        public Page PageStatFilmEnCours
-        {
-            get { return _pageStatFilmEnCours;  }
-            set {
-                if (_pageStatFilmEnCours != value)
-                {
-                    _pageStatFilmEnCours = value;
-                    OnPropertyChanged();
-                }
-            }
+            PageEnCours = new Accueil();
         }
 
         //Pour page des stats en cours des séries
-        private Page _pageStatSerieEnCours;
-        public Page PageStatSerieEnCours
+        private Page _pageEnCours;
+        public Page PageEnCours
         {
-            get { return _pageStatSerieEnCours; }
+            get { return _pageEnCours; }
             set
             {
-                if (_pageStatSerieEnCours != value)
+                if (_pageEnCours != value)
                 {
-                    _pageStatSerieEnCours = value;
+                    _pageEnCours = value;
                     OnPropertyChanged();
                 }
             }
@@ -67,31 +54,11 @@ namespace videotheque
         }
 
 
-
-
         //Evenements
-        private void CmbSelectFiltreFilm_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void BoutonVoirFilmSerie_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                PageStatFilmEnCours = new statsFilmParGenre();
-            }
-            catch(Exception error)
-            {
-                MessageBox.Show(error.ToString());
-            }
-        }
-
-        private void CmbSelectFiltreSerie_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            try
-            {
-                PageStatSerieEnCours = new statsSerieParGenre();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.ToString());
-            }
+            PageEnCours = new FilmsEtSeries();
+            boutonVoirFilmSerie.Visibility = Visibility.Hidden;
         }
     }
 }
