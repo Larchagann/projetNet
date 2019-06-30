@@ -15,6 +15,7 @@ namespace videotheque
     {
         protected async override void OnStartup(StartupEventArgs e)
         {
+
             base.OnStartup(e);
             await dataAccess.VideothequeDbContext.GetCurrent();
         }

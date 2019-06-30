@@ -9,8 +9,8 @@ using videotheque.dataAccess;
 namespace videotheque.Migrations
 {
     [DbContext(typeof(VideothequeDbContext))]
-    [Migration("20190618131809_videotheque")]
-    partial class videotheque
+    [Migration("20190630173942_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

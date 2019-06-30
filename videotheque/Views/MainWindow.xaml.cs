@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using videotheque.Views;
 using System.Runtime.CompilerServices;
+using videotheque.ViewModels;
 
 namespace videotheque
 {
@@ -73,7 +74,7 @@ namespace videotheque
 
         private void BoutonCreerMedia_Click(object sender, RoutedEventArgs e)
         {
-
+            AjoutMedia newAjoutMedia = new AjoutMedia();
         }
     }
 }
