@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,6 +25,7 @@ namespace videotheque.dataAccess
         }
 
         internal VideothequeDbContext(DbContextOptions options) : base(options) { }
+
         private VideothequeDbContext(string databasePath) : base()
         {
             DatabasePath = databasePath;
@@ -32,6 +34,9 @@ namespace videotheque.dataAccess
         public string DatabasePath { get; }
 
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Media> Media { get; set; }
+
+        public DbSet<MediaGenre> MediaGenre { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {

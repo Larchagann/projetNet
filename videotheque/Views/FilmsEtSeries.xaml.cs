@@ -29,13 +29,12 @@ namespace videotheque.Views
         {
             DataContext = this;
             InitializeComponent();
-            ListeFilmsEtSeries = new ObservableCollection<Genre>(AjoutMedia.GetAjoutMedia().GetGenre());
+            ListeFilmsEtSeries = new ObservableCollection<Media>(GestionMedia.GetInstance().GetMedia());
         }
 
-
         //Pour page des stats en cours des séries
-        private ObservableCollection<Genre> _listeFilmsEtSeries;
-        public ObservableCollection<Genre> ListeFilmsEtSeries
+        private ObservableCollection<Media> _listeFilmsEtSeries;
+        public ObservableCollection<Media> ListeFilmsEtSeries
         {
             get { return _listeFilmsEtSeries; }
             set
@@ -55,5 +54,59 @@ namespace videotheque.Views
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private void CmbSelectFiltreGenres2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbSelectFiltreGenres.SelectedIndex == 1)
+            {
+                try
+                {
+                    ListeFilmsEtSeries = new ObservableCollection<Media>(GestionMedia.GetInstance().GetMediaAction());
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                if (cmbSelectFiltreGenres.SelectedIndex == 2)
+                {
+                    try
+                    {
+                        ListeFilmsEtSeries = new ObservableCollection<Media>(GestionMedia.GetInstance().GetMediaComedie());
+                    }
+                    catch
+                    {
+
+                    }
+                }
+                else
+                {
+                    if (cmbSelectFiltreGenres.SelectedIndex == 3)
+                    {
+                        try
+                        {
+                            ListeFilmsEtSeries = new ObservableCollection<Media>(GestionMedia.GetInstance().GetMediaAnime());
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            ListeFilmsEtSeries = new ObservableCollection<Media>(GestionMedia.GetInstance().GetMedia());
+                        }
+                        catch
+                        {
+
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }

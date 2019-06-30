@@ -74,7 +74,7 @@ namespace videotheque
 
         private void BoutonCreerMedia_Click(object sender, RoutedEventArgs e)
         {
-            AjoutMedia newAjoutMedia = new AjoutMedia();
+            GestionMedia newAjoutMedia = new GestionMedia();
         }
     }
 }

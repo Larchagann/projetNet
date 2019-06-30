@@ -165,12 +165,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\20190630173942_Initial.cs" />
-    <Compile Include="Migrations\20190630173942_Initial.designer.cs">
-      <DependentUpon>20190630173942_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20190630213504_Inital.cs" />
+    <Compile Include="Migrations\20190630213504_Inital.designer.cs">
+      <DependentUpon>20190630213504_Inital.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\VideothequeDbContextModelSnapshot.cs" />
-    <Compile Include="ViewModels\AjoutMedia.cs" />
+    <Compile Include="ViewModels\GestionMedia.cs" />
     <Compile Include="Views\Accueil.xaml.cs">
       <DependentUpon>Accueil.xaml</DependentUpon>
     </Compile>
