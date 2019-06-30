@@ -59,6 +59,21 @@ namespace videotheque
         {
             PageEnCours = new FilmsEtSeries();
             boutonVoirFilmSerie.Visibility = Visibility.Hidden;
+            boutonRetourAccueil.Visibility = Visibility.Visible;
+            boutonCreerMedia.Visibility = Visibility.Visible;
+        }
+
+        private void BoutonRetourAccueil_Click(object sender, RoutedEventArgs e)
+        {
+            PageEnCours = new Accueil();
+            boutonVoirFilmSerie.Visibility = Visibility.Visible;
+            boutonRetourAccueil.Visibility = Visibility.Hidden;
+            boutonCreerMedia.Visibility = Visibility.Hidden;
+        }
+
+        private void BoutonCreerMedia_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

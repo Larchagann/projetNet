@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:videotheque"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -14,11 +15,15 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Frame Grid.Row="0" Grid.Column="0" Content="{Binding Path=PageEnCours, Mode=TwoWay}"></Frame>
+        <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" NavigationUIVisibility="Hidden" Content="{Binding Path=PageEnCours, Mode=TwoWay}"></Frame>
 
-        <Button Name="boutonVoirFilmSerie"  Grid.Row="1" Grid.Column="0" Click="BoutonVoirFilmSerie_Click" Style="{StaticResource bouton}">Voir les films et séries</Button>
+        <Button Name="boutonVoirFilmSerie"  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Click="BoutonVoirFilmSerie_Click" Style="{StaticResource bouton}">Voir les films et séries</Button>
+
+        <Button Name="boutonRetourAccueil"  Grid.Row="1" Grid.Column="0" Click="BoutonRetourAccueil_Click" Visibility="Hidden" Style="{StaticResource bouton}">Retour à l'accueil</Button>
+        <Button Name="boutonCreerMedia"  Grid.Row="1" Grid.Column="1" Click="BoutonCreerMedia_Click" Visibility="Hidden" Style="{StaticResource bouton}">Ajouter un film ou une série</Button>
 
     </Grid>
 </Window>

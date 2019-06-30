@@ -9,6 +9,47 @@
       Title="FilmsEtSeries">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource titrePageNoMargin}">Films et Séries</Label>
+
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource sousTitrePageAlinea}">Notre catalogue :</Label>
+
+        <ComboBox Grid.Row="2" Grid.Column="0" Style="{StaticResource comboBoxFiltre}">
+            <ComboBoxItem Content = "Film et Série" IsSelected="True"/>
+            <ComboBoxItem Content = "Film" />
+            <ComboBoxItem Content = "Série" />
+        </ComboBox>
+
+        <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource comboBoxFiltre}">
+            <ComboBoxItem Content = "Tous genres" IsSelected="True"/>
+            <ComboBoxItem Content = "Action" />
+            <ComboBoxItem Content = "Comédie" />
+        </ComboBox>
+
+        <ComboBox Grid.Row="2" Grid.Column="2" Style="{StaticResource comboBoxFiltre}">
+            <ComboBoxItem Content = "Tous genres" IsSelected="True"/>
+            <ComboBoxItem Content = "Action" />
+            <ComboBoxItem Content = "Comédie" />
+        </ComboBox>
+
+        <Button Grid.Row="2" Grid.Column="3" Style="{StaticResource boutonFiltre}">Filtrer</Button>
+
+        <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ItemsSource="{Binding ListeFilmsEtSeries}" Style="{StaticResource listBoxFilmsEtSeries}">
+
+        </ListBox>
+
     </Grid>
 </Page>
